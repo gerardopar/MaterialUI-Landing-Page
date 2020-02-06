@@ -1,0 +1,10 @@
+.hero{
+    align-items: center;
+    background-color: rgb(247, 247, 247);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.hero__img{
+    width: 40%;
+}
