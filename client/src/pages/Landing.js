@@ -16,11 +16,27 @@ class LandingPage extends Component {
   }
 
   componentDidMount(){
-
+    this.handleRandomJoke();
   }
 
   handleRandomJoke = () => {
+    fetch(`/randomJoke`, { // fetch random joke from chuck norris api
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+          this.setState({ joke: data.joke.value });
+        })
+        .catch((err) => (console.log(err)));
+  };
 
+  handleGetNewJoke = () => {
+    this.handleRandomJoke();
   };
 
   render(){
